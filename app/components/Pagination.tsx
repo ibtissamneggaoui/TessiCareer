@@ -26,7 +26,7 @@ interface PaginationProps  {
 
   return (
     // Personalized pagination position : flex-start - center - flelx-end <Pagination sx={{justifyContent:'flex-end'}}></Pagination>
-    <Box sx={{ width: '100%', display: 'flex', justifyContent: justifyContent ?? 'center' }}>
+    <Box  mt={2} sx={{ width: '100%', display: 'flex', justifyContent: justifyContent ?? 'center'}}>
     <TablePagination
       component="div"
       count={100}

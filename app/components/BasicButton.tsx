@@ -7,11 +7,10 @@ import Colors from "../../utils/styles/colors";
 
 interface BasicButtonProps{
   onClick?: () => void;
-  children: ReactNode;
 }
 
 // review props
-function BasicButton({ onClick, children, bgcolor ,...rest}: BasicButtonProps & { [key: string]: any }) {
+function BasicButton({ onClick, bgcolor ,...rest}: BasicButtonProps & { [key: string]: any }) {
   return (
     <Button
       variant="contained"
@@ -31,7 +30,7 @@ function BasicButton({ onClick, children, bgcolor ,...rest}: BasicButtonProps & 
       onClick={onClick}
       {...rest}
     >
-      {children}
+     
     </Button>
   );
 };

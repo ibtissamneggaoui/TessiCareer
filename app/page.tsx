@@ -5,6 +5,7 @@ import SearchBar from "./components/SearchBar";
 import Footer from "./components/Footer";
 import Colors from "@/utils/styles/colors";
 import SideBar from "./components/SideBar";
+import Collaborators from "./Collaborators/page";
 
 export default function Home() {
   const handleClick = () => {
@@ -13,15 +14,8 @@ export default function Home() {
   return (
     <>
       <SideBar>
-        <BasicButton onClick={handleClick} bgcolor={Colors.secondary}>
-          Test button
-        </BasicButton>
-        <br />
-        <br />
-        {/* input */}
-        <SearchBar />
-        <br />
-        <br />
+        
+        <Collaborators/>
         <Footer />
       </SideBar>
     </>

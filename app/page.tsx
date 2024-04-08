@@ -1,10 +1,9 @@
 "use client";
 
-
 import Footer from "./components/Footer";
-import Colors from "@/utils/styles/colors";
 import SideBar from "./components/SideBar";
 import Collaborators from "./collaborators/page";
+import React from "react";
 
 export default function Home() {
  

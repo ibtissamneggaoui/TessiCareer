@@ -20,7 +20,7 @@ import Container from "@mui/material/Container";
 import Avatar from "@mui/material/Avatar";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
-import Colors from "@/utils/styles/colors";
+import Colors from "../../utils/styles/colors";
 import AttachFile from '@mui/icons-material/AttachFile';
 import CreateNewFolder from '@mui/icons-material/CreateNewFolder';
 import Home from '@mui/icons-material/Home';

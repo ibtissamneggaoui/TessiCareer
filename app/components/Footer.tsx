@@ -1,6 +1,7 @@
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
-import Colors from "@/utils/styles/colors";
+import Colors from "../../utils/styles/colors";
+import React from "react";
 
 const Footer = () => {
   const date = new Date().getFullYear();

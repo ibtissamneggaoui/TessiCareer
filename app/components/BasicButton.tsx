@@ -3,7 +3,7 @@
 
 import React, { ReactNode} from "react";
 import Button from "@mui/material/Button";
-import Colors from "@/utils/styles/colors";
+import Colors from "../../utils/styles/colors";
 
 interface BasicButtonProps{
   onClick?: () => void;

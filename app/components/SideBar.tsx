@@ -22,6 +22,7 @@ import CreateNewFolder from "@mui/icons-material/CreateNewFolder";
 import Home from "@mui/icons-material/Home";
 import Person from "@mui/icons-material/Person";
 import Work from "@mui/icons-material/Work";
+import Link from "next/link";
 
 const drawerWidth = 64;
 
@@ -46,10 +47,39 @@ const Drawer = styled(MuiDrawer)(() => ({
   boxSizing: "border-box",
 }));
 
-export default function SideBar() {
+
+const menuItems =[
   {
-    /* Start AppBar */
-  }
+    text: "Dashboard",
+    icon: <Home />,
+    link:"/dashboard"
+  }, 
+  {
+    text: "Mon espace carrière",
+    icon: <Work />,
+    link:"/career"
+  },
+  {
+    text: "Mon C.V.",
+    icon: <AttachFile />,
+    link:"/resume"
+  },
+  {
+    text: "Référentiels",
+    icon: <CreateNewFolder />,
+    link:"/repositories"
+  },
+  {
+    text: "Collaborateurs",
+    icon: <Person />,
+    link:"/collaborators"
+  },
+];
+
+export default function SideBar() {
+ 
+
+  {/* Start AppBar */}
   const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(
     null
   );
@@ -129,29 +159,9 @@ export default function SideBar() {
       <Drawer variant="permanent">
       <Box sx={{ width: '100%',height: "64px" }}/>
         <List>
-          {[
-            {
-              text: "Dashboard",
-              icon: <Home />,
-            },
-            {
-              text: "Mon espace carrière",
-              icon: <Work />,
-            },
-            {
-              text: "Mon C.V.",
-              icon: <AttachFile />,
-            },
-            {
-              text: "Référentiels",
-              icon: <CreateNewFolder />,
-            },
-            {
-              text: "Collaborateurs",
-              icon: <Person />,
-            },
-          ].map((item, index) => (
-            <ListItem key={index} disablePadding sx={{ display: "block" }}>
+          {menuItems.map((item, index) => (
+          <Link href={item.link} key={index}>
+            <ListItem  disablePadding sx={{ display: "block" }}>
               <ListItemButton
                 sx={{
                   minHeight: 48,
@@ -171,6 +181,7 @@ export default function SideBar() {
                 </ListItemIcon>
               </ListItemButton>
             </ListItem>
+             </Link>
           ))}
         </List>
       </Drawer>

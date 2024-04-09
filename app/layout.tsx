@@ -3,8 +3,7 @@ import { AppRouterCacheProvider } from "@mui/material-nextjs/v14-appRouter";
 import "./globals.css";
 import React from "react";
 import Container from "./components/Container";
-
-
+import { Providers } from "./Redux/Provider";
 
 export default function RootLayout({
   children,
@@ -15,9 +14,9 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <AppRouterCacheProvider>
-           <Container>
-              {children}
-           </Container>
+          <Providers>
+            <Container>{children}</Container>
+          </Providers>
         </AppRouterCacheProvider>
       </body>
     </html>

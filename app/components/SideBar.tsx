@@ -26,6 +26,7 @@ import CreateNewFolder from '@mui/icons-material/CreateNewFolder';
 import Home from '@mui/icons-material/Home';
 import Person from '@mui/icons-material/Person';
 import Work from '@mui/icons-material/Work';
+import Link from "next/link";
 
 const drawerWidth = 240;
 
@@ -104,6 +105,35 @@ const Drawer = styled(MuiDrawer, {
   }),
 }));
 
+// define the menu items
+
+const menuItems =[
+  {
+    text: "Dashboard",
+    icon: <Home />,
+    link:"/dashboard"
+  },
+  {
+    text: "Mon espace carrière",
+    icon: <Work />,
+    link:"/career"
+  },
+  {
+    text: "Mon C.V.",
+    icon: <AttachFile />,
+    link:"/resume"
+  },
+  {
+    text: "Référentiels",
+    icon: <CreateNewFolder />,
+    link:"/repositories"
+  },
+  {
+    text: "Collaborateurs",
+    icon: <Person />,
+    link:"/collaborators"
+  },
+];
 export default function SideBar({ children }: SideBarProps) {
   const [open, setOpen] = React.useState(false);
   const handleDrawerOpen = () => {
@@ -209,29 +239,9 @@ export default function SideBar({ children }: SideBarProps) {
         </DrawerHeader>
         <Divider />
         <List>
-          {[
-            {
-              text: "Dashboard",
-              icon: <Home />,
-            },
-            {
-              text: "Mon espace carrière",
-              icon: <Work />,
-            },
-            {
-              text: "Mon C.V.",
-              icon: <AttachFile />,
-            },
-            {
-              text: "Référentiels",
-              icon: <CreateNewFolder />,
-            },
-            {
-              text: "Collaborateurs",
-              icon: <Person />,
-            },
-          ].map((item, index) => (
-            <ListItem key={index} disablePadding sx={{ display: "block" }}>
+          {menuItems.map((item, index) => (
+          <Link href={item.link} key={index}>
+            <ListItem  disablePadding sx={{ display: "block" }}>
               <ListItemButton
                 sx={{
                   minHeight: 48,
@@ -255,6 +265,7 @@ export default function SideBar({ children }: SideBarProps) {
                 />
               </ListItemButton>
             </ListItem>
+             </Link>
           ))}
         </List>
       </Drawer>

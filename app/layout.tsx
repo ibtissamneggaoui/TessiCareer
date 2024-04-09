@@ -10,6 +10,7 @@ import "@fontsource/roboto/700.css";
 import React from "react";
 import Footer from "./components/Footer";
 import SideBar from "./components/SideBar";
+import { Providers } from "./Redux/Provider";
 
 export default function RootLayout({
   children,
@@ -24,7 +25,9 @@ export default function RootLayout({
           {/* encapsulates the logic for caching router-related data, such as fetched page content, route configurations, or navigation state.*/}
           <ThemeProvider theme={theme}>
             <SideBar>
+              <Providers>
               {children}
+              </Providers>
               <Footer />
             </SideBar>
           </ThemeProvider>

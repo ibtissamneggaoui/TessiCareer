@@ -1,3 +1,4 @@
+
 "use client";
 import React from "react";
 import Footer from "./components/Footer";
@@ -9,8 +10,6 @@ export default function Home() {
   return (
     <>
       <SideBar>
-        
-        <Collaborators/>
         <Footer />
       </SideBar>
     </>

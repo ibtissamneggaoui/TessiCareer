@@ -260,7 +260,8 @@ export default function SideBar({ children }: SideBarProps) {
       </Drawer>
          {/* End sidebar */}
       {/* Page content */}
-      <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
+      <Box component="main" sx={{ flexGrow: 1, p: 5 }}>
+        <DrawerHeader />
         <DrawerHeader />
         {children}
       </Box>

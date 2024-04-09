@@ -1,12 +1,10 @@
+"use client";
 import React from "react";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select, { SelectChangeEvent } from "@mui/material/Select";
-import IconButton from "@mui/material/IconButton";
-import NorthIcon from "@mui/icons-material/North";
-import SouthIcon from "@mui/icons-material/South";
-import { Stack } from "@mui/material";
+import { Breadcrumbs, Link, Stack } from "@mui/material";
 import colors from "../../utils/styles/colors";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
@@ -17,11 +15,27 @@ import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import { Typography } from "@mui/material";
 import VerticalAlignBottomSharpIcon from '@mui/icons-material/VerticalAlignBottomSharp';
-import { ArrowUpward, ArrowUpwardSharp, GetApp } from "@mui/icons-material";
 import SearchBar from "../components/SearchBar";
 import Pagination from "../components/Pagination";
+import IconButton from "@mui/material/IconButton";
+import SouthIcon from "@mui/icons-material/South";
+import ArrowUpwardSharp from "@mui/icons-material/ArrowUpwardSharp";
 
 const rows = [
+  {
+    Matricule: "22654",
+    Nom: "elhidaoui ",
+    Prénom: "chaimae",
+    Email: "chaimae.elhidaoui@gmail.com",
+    Téléphone: "020256455",
+  },
+  {
+    Matricule: "22654",
+    Nom: "elhidaoui ",
+    Prénom: "chaimae",
+    Email: "chaimae.elhidaoui@gmail.com",
+    Téléphone: "020256455",
+  },
   {
     Matricule: "22654",
     Nom: "elhidaoui ",
@@ -60,19 +74,16 @@ export default function Collaborators() {
   };
 
   return (
-    <>
-      <Typography
-        mt={2}
-        variant="h4"
-        fontWeight={"bold"}
-        color={colors.primary}
-        mb={7}
-      >
-        Liste Des Collaborateurs
-      </Typography>
+    <Stack>
+      <Breadcrumbs aria-label="dashbord" sx={{marginBottom:3}}>
+        <Link underline="hover" color="inherit" href="/">
+          Dashbord
+        </Link>
+        <Typography color="text.primary">Collaborators</Typography>
+      </Breadcrumbs>
       <Stack
         flexDirection={"row"}
-        sx={{ alignItems: "center", justifyContent: "space-between" }}
+        sx={{ alignItems: "center", justifyContent: "space-between", marginBottom:3}}
       >
         {/* Sort & export buttons */}
         <Stack
@@ -105,7 +116,7 @@ export default function Collaborators() {
         <SearchBar label="Search" sx={{ width: "40%", marginRight: "6px" }} />
       </Stack>
       {/* Table */}
-      <TableContainer component={Paper} sx={{ marginTop: 4 }}>
+      <TableContainer component={Paper}>
         <Table sx={{ minWidth: 650 }} aria-label="simple table">
           <TableHead>
             <TableRow>
@@ -136,6 +147,6 @@ export default function Collaborators() {
       </TableContainer>
       {/* Pagination */}
       <Pagination />
-    </>
+    </Stack>
   );
 }
